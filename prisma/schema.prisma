@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator db {
+  provider = "prisma-client-js"
+}
+
+generator pothos {
+  provider     = "prisma-pothos-types"
+  clientOutput = "@prisma/client"
+  output       = "./pothos-types.ts"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model SeoulRent {
+  id               Int    @id(map: "PK_SeoulRent") @default(autoincrement())
+  year             String
+  districtCode     String
+  districtName     String
+  neighborhoodCode String
+  neighborhoodName String
+  lotCode          String
+  lotType          String
+  mainNumber       String
+  subNumber        String
+  floor            String
+  contractDate     String
+  rentType         String
+  rentalSpace      String
+  deposit          String
+  rent             String
+  buildingName     String
+  constructionYear String
+  buildingUse      String
+  term             String
+  classification   String
+  renewalRight     String
+  previousDeposit  String
+  previousRent     String
+}

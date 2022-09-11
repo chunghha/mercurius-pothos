@@ -1,0 +1,9 @@
+{
+    "delay": "0",
+    "execMap": {
+        "ts": "ts-node"
+    },
+    "events": {
+        "start": "eslint '{src,test}/**/*.ts' --fix"
+    }
+}
