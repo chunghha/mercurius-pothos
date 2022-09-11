@@ -1,3 +1,7 @@
+import { writeFileSync } from 'fs';
+
+import { lexicographicSortSchema, printSchema } from 'graphql';
+
 import { builder } from './builder';
 import { db } from './db';
 
@@ -64,3 +68,6 @@ builder.queryType({
 });
 
 export const schema = builder.toSchema();
+
+const schemaAsString = printSchema(lexicographicSortSchema(schema));
+writeFileSync('./src/schema.graphql', schemaAsString);

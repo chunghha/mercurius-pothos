@@ -1,0 +1,31 @@
+type Query {
+  seoulRent(id: Int!): SeoulRent
+  yearSelection(take: Int, year: String!): [SeoulRent!]
+}
+
+type SeoulRent {
+  buildingName: String!
+  buildingUse: String!
+  classification: String!
+  constructionYear: String!
+  contractDate: String!
+  deposit: String!
+  districtCode: String!
+  districtName: String!
+  floor: String!
+  id: Int!
+  lotCode: String!
+  lotType: String!
+  mainNumber: String!
+  neighborhoodCode: String!
+  neighborhoodName: String!
+  previousDeposit: String!
+  previousRent: String!
+  renewalRight: String!
+  rent: String!
+  rentType: String!
+  rentalSpace: String!
+  subNumber: String!
+  term: String!
+  year: String!
+}
