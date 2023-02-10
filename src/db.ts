@@ -7,6 +7,6 @@ export const db = new PrismaClient({
 	errorFormat: 'pretty'
 });
 
-db.$on('query', e => {
+db.$on('query', (e: any) => {
 	logger.info(e);
 });
