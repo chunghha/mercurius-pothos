@@ -1,5 +1,6 @@
 generator db {
   provider = "prisma-client-js"
+  previewFeatures = ["jsonProtocol", "views"]
 }
 
 generator pothos {
